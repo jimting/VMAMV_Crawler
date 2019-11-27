@@ -34,11 +34,10 @@ app.use('/users', usersRouter);
 app.get('/vmamv_crawler', (req, res) =>{
 	var url = req.query.url;
 	var system = req.query.system;
-	var pic_url = main("http://140.121.197.128:4147/", "CINEMA");
-	res.send('{"pic_url" : "' + pic_url + '"}');
+	main("http://140.121.197.128:4147/", "CINEMA", res);
 })
 
-async function main(url, system_name) {
+async function main(url, system_name, res) {
 	let driver = await new Builder()
         .forBrowser('firefox')
 		.setFirefoxOptions(new firefox.Options().headless().windowSize(screen))
@@ -80,7 +79,7 @@ async function main(url, system_name) {
 	console.log(">> Get the href.");
 	const picUrl = await imgurUpload(text.replace("data:image/png;base64,",""));
 	
-	return picUrl;
+	res.send('{"pic_url" : "' + pic_url + '"}');
 
 }
 
