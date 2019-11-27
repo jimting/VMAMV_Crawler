@@ -5,9 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var request = require('request');
 
-//for rabbitmq
-var context = require('rabbit.js').createContext(MQserver);
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
