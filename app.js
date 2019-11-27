@@ -36,14 +36,14 @@ app.get('/vmamv_crawler', wrap(async (req, res, next) =>{
 	var system = req.query.system;
 	main("http://140.121.197.128:4147/", "CINEMA", res);
 	
-	main().catch(error => res.send('{"error" : "' + error.message + '"'));
+	main().catch(error => res.send('{"error" : "' + error.message + '"}'));
 }))
 
 app.get('/crawler_test', wrap(async (req, res, next)  =>{
 
 	testSelenium(res);
 	
-	testSelenium().catch(error => res.send('{"error" : "' + error.message + '"'));
+	//testSelenium().catch(error => res.send('{"error" : "' + error.message + '"}'));
 }))
 
 
