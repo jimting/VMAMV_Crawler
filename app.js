@@ -1,10 +1,3 @@
-var userDB = process.env.userDB;
-var client_id = process.env.client_id;
-var client_secret = process.env.client_secret;
-var MQserver = process.env.rabbitmq;
-
-console.log(userDB + " | " + client_id + " | " + client_secret + " | " + MQserver);
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -14,10 +7,6 @@ var request = require('request');
 
 //for rabbitmq
 var context = require('rabbit.js').createContext(MQserver);
-
-//mongo add-on
-var MongoClient = require('mongodb').MongoClient;
-var mongo = require('mongodb');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
