@@ -43,7 +43,7 @@ app.get('/crawler_test', wrap(async (req, res, next)  =>{
 
 	testSelenium(res);
 	
-	//testSelenium().catch(error => res.send('{"error" : "' + error.message + '"}'));
+	testSelenium().catch(error => res.send('{"error" : "' + error.message + '"}'));
 }))
 
 
