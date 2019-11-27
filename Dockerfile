@@ -8,6 +8,9 @@ RUN npm install selenium-webdriver
 RUN npm install geckodriver
 RUN npm i express-async-wrap
 
+RUN apt-get update
+RUN apt-get install firefox
+
 EXPOSE 3000
 
 CMD npm start
