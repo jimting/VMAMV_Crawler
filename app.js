@@ -38,7 +38,14 @@ app.get('/vmamv_crawler', (req, res) =>{
 })
 
 app.get('/crawler_test', (req, res) =>{
+	try
+	{
 	testSelenium(res);
+	}
+	catch(err)
+	{
+		res.send(err);
+	}
 })
 
 
