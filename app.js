@@ -16,7 +16,7 @@ const screen = {
 };
 
 var app = express();
-
+import wrap from 'express-async-wrap';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
