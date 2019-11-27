@@ -37,6 +37,25 @@ app.get('/vmamv_crawler', (req, res) =>{
 	main("http://140.121.197.128:4147/", "CINEMA", res);
 })
 
+app.get('/crawler_test', (req, res) =>{
+	testSelenium(res);
+})
+
+
+async function testSelenium(res)
+{
+	let driver = await new Builder()
+        .forBrowser('firefox')
+		.setFirefoxOptions(new firefox.Options().headless().windowSize(screen))
+        .build();
+
+	await driver.get("https://www.cwb.gov.tw/V7e/forecast/taiwan/Taipei_City.htm");
+	const text = await driver.findElement(By.xpath("//a[@class='NavLife']")).getAttribute("href");
+	
+	res.send('{"link_url" : "' + pic_url + '"}');
+}
+
+
 async function main(url, system_name, res) {
 	let driver = await new Builder()
         .forBrowser('firefox')
