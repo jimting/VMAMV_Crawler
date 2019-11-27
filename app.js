@@ -48,7 +48,7 @@ app.use('/users', usersRouter);
 app.get('/vmamv_crawler', (req, res) =>{
 	var url = req.query.url;
 	var system = req.query.system;
-	var pic_url = main("http://140.121.197.128:4147/", "CINEMA"));
+	var pic_url = main("http://140.121.197.128:4147/", "CINEMA");
 	res.send('{"pic_url" : "' + pic_url + '"}');
 })
 
