@@ -8,6 +8,8 @@ import requests
 def getURL (url, system_name) :
 	options = Options()
 	options.headless = True
+	options.add_argument("--no-sandbox")
+	options.add_argument("--disable-dev-shm-usage")
 	driver = Chrome(chrome_options=options)
 	driver.get(url)
 	driver.maximize_window()
@@ -51,6 +53,8 @@ def getURL (url, system_name) :
 def test() :
 	options = Options()
 	options.headless = True
+	options.add_argument("--no-sandbox")
+	options.add_argument("--disable-dev-shm-usage")
 	driver = Chrome(chrome_options=options)
 	driver.get("https://www.cwb.gov.tw/V7e/forecast/taiwan/Taipei_City.htm")
 	driver.maximize_window()
