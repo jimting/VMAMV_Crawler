@@ -8,7 +8,7 @@ import requests
 def getURL (url, system_name) :
 	options = Options()
 	options.headless = True
-	driver = Chrome(executable_path="app/chromedriver", chrome_options=options)
+	driver = Chrome(chrome_options=options)
 	driver.get(url)
 	driver.maximize_window()
 	driver.find_element_by_xpath("//button[@id='systemsDropdownMenuButton']").click()
