@@ -4,5 +4,5 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 RUN chmod 755 chromedriver
 RUN apt-get update
-RUN apt-get install -y chromium-browser
+RUN apt-get install chromium-driver
 CMD python app.py
