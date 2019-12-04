@@ -51,7 +51,7 @@ def getURL (url, system_name) :
 def test() :
 	options = Options()
 	options.headless = True
-	driver = Chrome(executable_path="./chromedriver", chrome_options=options)
+	driver = Chrome(chrome_options=options)
 	driver.get("https://www.cwb.gov.tw/V7e/forecast/taiwan/Taipei_City.htm")
 	driver.maximize_window()
 	pic_url = driver.find_element_by_xpath("//a[@class='NavLife']").get_attribute("href")
