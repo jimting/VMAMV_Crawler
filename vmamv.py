@@ -74,4 +74,4 @@ def imgur_upload(b64_image) :
 	#parse = json.loads(response)
 	#print(parse['data']['link'])
 
-#main("http://140.121.197.128:4147/", "CINEMA")
+#print(getURL("http://140.121.197.128:4147/", "CINEMA"))
