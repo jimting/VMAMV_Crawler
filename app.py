@@ -12,8 +12,8 @@ def index():
 
 @app.route('/vmamv')
 def vmamv():
-    url = request.args.get('url')
-    system_name = request.args.get('system_name')
+    url = str(request.args.get('url'))
+    system_name = str(request.args.get('system_name'))
     result = service.getURL(url,system_name)
     return result
 
