@@ -29,6 +29,8 @@ def getURL (url, system_name) :
 	time.sleep(1)
 	driver.find_element_by_xpath("//button[@id='reduce_SVG']").click()
 	time.sleep(1)
+	driver.find_element_by_xpath("//button[@id='reduce_SVG']").click()
+	time.sleep(1)
 	print("<< Change the canvas scale.\n")
 	
 	time.sleep(2)
